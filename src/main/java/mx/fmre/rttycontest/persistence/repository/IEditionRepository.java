@@ -14,4 +14,7 @@ public interface IEditionRepository extends JpaRepository<Edition, Integer> {
 
 	@Query(value = "SELECT E FROM Edition E INNER JOIN Contest C ON (C.id = E.contest.id) WHERE E.contest.id = :contestId")
 	public List<Edition> getByContestId(@Param("contestId") Integer contestId);
+
+	@Query(value = "SELECT E FROM Edition E")
+	public List<Edition> getActiveContest();
 }

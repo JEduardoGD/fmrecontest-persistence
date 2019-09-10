@@ -23,4 +23,9 @@ public class EditionServiceAPIImpl implements IEditionServiceAPI {
 	public List<Edition> findByContestId(Integer contestId) {
 		return editionRepository.getByContestId(contestId);
 	}
+
+	@Override
+	public List<Edition> getActiveEditions() {
+		return editionRepository.getActiveContest();
+	}
 }

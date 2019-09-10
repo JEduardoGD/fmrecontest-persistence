@@ -25,8 +25,8 @@ public class EmailAccount {
 	@JoinColumn(name = "N_ID_CONTEST")
 	private Contest contest;
 
-	@Column(name = "S_SMTP_SERVER")
-	private String smtpServer;;
+	@Column(name = "S_HOST")
+	private String smtpServer;
 
 	@Column(name = "S_EMAIL_ADDRESS")
 	private String emailAddress;
@@ -37,6 +37,6 @@ public class EmailAccount {
 	@Column(name = "S_PASSWORD")
 	private String password;
 
-	@Column(name = "N_SMTP_PORT")
+	@Column(name = "N_PORT")
 	private Integer port;
 }

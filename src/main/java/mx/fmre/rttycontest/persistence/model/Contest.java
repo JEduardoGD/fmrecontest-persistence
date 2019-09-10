@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,6 +31,6 @@ public class Contest {
 	@OneToMany(mappedBy = "contest")
     private List<Edition> editions = new ArrayList<>();
 
-	@OneToOne(mappedBy = "contest")
+	@OneToOne(mappedBy = "contest", fetch = FetchType.EAGER)
 	private EmailAccount emailAccount;
 }

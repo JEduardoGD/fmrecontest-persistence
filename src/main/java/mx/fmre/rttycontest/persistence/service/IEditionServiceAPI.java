@@ -10,4 +10,6 @@ public interface IEditionServiceAPI {
 
 	public List<Edition> findByContestId(Integer contestId);
 
+	public List<Edition> getActiveEditions();
+
 }
