@@ -2,7 +2,6 @@ package mx.fmre.rttycontest.persistence.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -20,35 +19,22 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "TBL_EDITION")
-public class Edition implements Serializable {
-
+@Table(name="TBL_EMAIL")
+public class Email implements Serializable{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 3786395119566979968L;
-
+	private static final long serialVersionUID = 345181349943945869L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "N_ID_EDITION")
+	@Column(name = "N_ID_EMAIL")
 	private Integer id;
-
+	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "N_ID_CONTEST")
-	private Contest contest;
+	@JoinColumn(name = "N_ID_EDITION")
+	private Edition edition;
 
-	@Column(name = "S_DESCRIPTION")
-	private String description;
-
-	@Column(name = "N_YEAR")
-	private int year;
-
-	@Column(name = "T_START_UTC")
-	private Date start;
-
-	@Column(name = "T_END_UTC")
-	private Date end;
-
-	@OneToMany(mappedBy = "edition")
-    private List<Email> emails = new ArrayList<>();
+	@OneToMany(mappedBy = "email")
+    private List<AttachedFile> attachedFiles = new ArrayList<>();
 }
