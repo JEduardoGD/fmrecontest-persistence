@@ -34,4 +34,16 @@ public class AttachedFile implements Serializable {
 
 	@Column(name = "S_FILENAME")
 	private String filename;
+	
+	@Column(name = "S_CONTENT_TYPE")
+	private String contentType;
+	
+	@Column(name = "N_LENGHT")
+	private Integer lenght;
+	
+	@Column(name = "S_MD5_HASH")
+	private String md5Hash;
+	
+	@Column(name = "S_PATH")
+	private String path;
 }
