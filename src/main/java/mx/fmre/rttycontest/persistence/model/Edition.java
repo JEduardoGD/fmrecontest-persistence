@@ -49,6 +49,12 @@ public class Edition implements Serializable {
 	@Column(name = "T_END_UTC")
 	private Date end;
 
+	@Column(name = "N_ID_EMAIL_START")
+	private Integer emailStart;
+
+	@Column(name = "N_ID_EMAIL_END")
+	private Integer emailEnd;
+
 	@OneToMany(mappedBy = "edition")
     private List<Email> emails = new ArrayList<>();
 }
