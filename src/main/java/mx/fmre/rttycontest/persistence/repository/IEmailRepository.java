@@ -21,4 +21,13 @@ public interface IEmailRepository extends JpaRepository<Email, Integer> {
 			@Param("emailCountStart") Integer emailCountStart,
 			@Param("emailCountEnd") Integer emailCountEnd,
 			@Param("idEdition") Integer idEdition);
+	
+	@Query(value = "" +
+			"SELECT E.emailCount " +
+			"FROM Email E " +
+			"WHERE E.emailCount >= :emailCountStart and " +
+			"      E.edition.id = :idEdition")
+	public List<Integer> getEmailCountsSaved(
+			@Param("emailCountStart") Integer emailCountStart,
+			@Param("idEdition") Integer idEdition);
 }

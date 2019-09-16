@@ -2,6 +2,7 @@ package mx.fmre.rttycontest.persistence.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -38,6 +39,24 @@ public class Email implements Serializable {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "N_ID_EDITION")
 	private Edition edition;
+	
+	@Column(name = "S_RECIPIENTS_FROM_NAME")
+	private String recipientsFromName;
+	
+	@Column(name = "S_RECIPIENTS_FROM_ADDRESS")
+	private String recipientsFromAddress;
+	
+	@Column(name = "D_RECEIVED_DATE")
+	private Date receivedDate;
+	
+	@Column(name = "S_RECIPIENTS_TO")
+	private String recipientsTo;
+	
+	@Column(name = "D_SENT_DATE")
+	private Date sentDate;
+	
+	@Column(name = "S_SUBJECT")
+	private String subject;
 
 	@OneToMany(mappedBy = "email", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	private List<AttachedFile> attachedFiles = new ArrayList<>();

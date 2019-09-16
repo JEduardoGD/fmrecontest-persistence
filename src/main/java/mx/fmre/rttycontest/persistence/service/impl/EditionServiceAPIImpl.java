@@ -26,6 +26,6 @@ public class EditionServiceAPIImpl implements IEditionServiceAPI {
 
 	@Override
 	public List<Edition> getActiveEditions() {
-		return editionRepository.getActiveContest();
+		return editionRepository.getActiveEditionOfContest();
 	}
 }

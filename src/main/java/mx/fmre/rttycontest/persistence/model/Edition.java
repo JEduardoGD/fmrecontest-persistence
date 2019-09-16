@@ -55,6 +55,9 @@ public class Edition implements Serializable {
 	@Column(name = "N_ID_EMAIL_END")
 	private Integer emailEnd;
 
+	@Column(name = "N_ACTIVE")
+	private Boolean active;
+
 	@OneToMany(mappedBy = "edition")
     private List<Email> emails = new ArrayList<>();
 }
