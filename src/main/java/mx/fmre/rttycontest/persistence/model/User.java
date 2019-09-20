@@ -16,8 +16,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
-import org.hibernate.validator.constraints.Length;
-
 import lombok.Data;
 
 @Data
@@ -34,7 +32,7 @@ public class User {
 	@NotEmpty(message = "*Please provide an email")
 	private String email;
 	@Column(name = "S_PASSWORD")
-	@Length(min = 5, message = "*Your password must have at least 5 characters")
+	//@Length(min = 5, message = "*Your password must have at least 5 characters")
 	@NotEmpty(message = "*Please provide your password")
 	private String password;
 	@Column(name = "S_NAME")
